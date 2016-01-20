@@ -40,8 +40,10 @@ Let's try
 Go in the `www` folder and run : `nodejs site.js`. You can access to the website at : http://localhost/
 Now the idea is to **add encryption**.
 
-Keys
-----
+Certificates
+------------
+
+### Use HTTPS in NodeJS
 
 Update the code in the `site.js` file :
 
@@ -61,12 +63,18 @@ Update the code in the `site.js` file :
     
     server.listen(8000, "0.0.0.0");
 
-Now let's create the keys.
+### Create the certificates
 
-Download the `create_certs.sh` file, and execute :
+Download the `create_certs.sh` file in the `nodeJS` folder, and execute :
 
     sudo chmod +x create_certs.sh
     ./create_certs.sh 'yourdomaine.org'
+
+### Certificate Authority Public Key
+
+Add the `certs/client/my-root-ca-crt.pem` to you browser. You can share it anywhere, it is the public key of the Certificate Authority.
+
+The connexion is certified !
 
 Links
 -----
