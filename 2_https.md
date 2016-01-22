@@ -12,6 +12,7 @@ I choose this organization :
         /certs
         /www
             site.js
+        create_certs.sh
 
 Copy the code in the `site.js` file :
 
@@ -49,19 +50,18 @@ Update the code in the `site.js` file :
 
     const https = require('https');
     const fs = require('fs');
-    const path = require('path')
     
     const options = {
-        key: fs.readFileSync(path.join('../', 'certs', 'server', 'my-server.key.pem')),
-        cert: fs.readFileSync(path.join('../', 'certs', 'server', 'my-server.crt.pem'))
+        key: fs.readFileSync('../certs/server/my-server.key.pem'),
+        cert: fs.readFileSync('../certs/server/my-server.crt.pem')
     };
     
     var server = https.createServer(options, function(req, res) {
         res.writeHead(200);
-        res.end('hello world\n');
+      res.end('Hello World!');
     });
     
-    server.listen(8000, "0.0.0.0");
+    server.listen(8443, "0.0.0.0");
 
 ### Create the certificates
 
@@ -74,7 +74,7 @@ Download the `create_certs.sh` file in the `nodeJS` folder, and execute :
 
 Add the `certs/client/my-root-ca-crt.pem` to you browser. You can share it anywhere, it is the public key of the Certificate Authority.
 
-The connexion is certified !
+The connexion is secured!
 
 Links
 -----
