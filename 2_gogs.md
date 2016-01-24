@@ -35,3 +35,4 @@ Links
 -----
 
 * http://blog.hypriot.com/post/run-your-own-github-like-service-with-docker/
+* https://github.com/gogits/gogs/issues/235
