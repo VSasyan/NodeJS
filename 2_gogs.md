@@ -22,12 +22,11 @@ It is really important to have HTTPS access to the web interface, so change serv
 
     [server]
     PROTOCOL = https
-    DOMAIN = localhost
-    ROOT_URL = `https://localhost:3000/`
-    HTTP_ADDR = 
+    DOMAIN = octocat.ddns.net:8022
     HTTP_PORT = 3000
-    CERT_FILE = cert.pem
-    KEY_FILE = key.pem
+    ROOT_URL = https://octocat.ddns.net/
+    CERT_FILE = /data/gogs/cert.pem
+    KEY_FILE = /data/gogs/key.pem
 
 You have to create/have a certificate and a public key for your server.
   
