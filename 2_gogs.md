@@ -29,6 +29,13 @@ It is really important to have HTTPS access to the web interface, so change serv
     KEY_FILE = /data/gogs/key.pem
 
 You have to create/have a certificate and a public key for your server.
+
+Add the CA certificate on the client
+------------------------------------
+
+    wget https://raw.githubusercontent.com/VSasyan/CA/master/Ma_CA_RPI_1.pem
+    sudo mv Ma_CA_RPI_1.pem /usr/local/share/ca-certificates/Ma_CA_RPI_1.crt
+    sudo update-ca-certificates
   
 Links
 -----
