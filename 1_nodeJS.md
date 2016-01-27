@@ -80,6 +80,7 @@ Certificates
 Update the code in the `site.js` file :
 
     const https = require('https');
+    const http = require('http');
     const fs = require('fs');
     
     const options = {
@@ -87,12 +88,18 @@ Update the code in the `site.js` file :
         cert: fs.readFileSync('../certs/server/my-server.crt.pem')
     };
     
-    var server = https.createServer(options, function(req, res) {
+    // The website
+    https.createServer(options, function(req, res) {
         res.writeHead(200);
       res.end('Hello World!');
-    });
+    }).listen(8443, "0.0.0.0");
     
-    server.listen(8443, "0.0.0.0");
+    // Redirection to HTTPS
+    http.createServer(function (req, res) {
+        res.writeHead(301, { "Location": "https://" + req.headers['host'] + req.url });
+        res.end();
+    }).listen(80);
+
 
 ### Create the certificates
 
