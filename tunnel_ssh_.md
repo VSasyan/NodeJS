@@ -23,7 +23,7 @@ Passer `network.proxy.socks_remote_dns` à `true`.
 
 Lancer la ligne de commande :
 
-  chromium-browser --proxy-server="socks5://localhost:3128" --host-resolver-rules="MAP * 0.0.0.0 , EXCLUDE localhost" &
+    chromium-browser --proxy-server="socks5://localhost:3128" --host-resolver-rules="MAP * 0.0.0.0 , EXCLUDE localhost" &
 
 Voilà !
 
