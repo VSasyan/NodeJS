@@ -8,7 +8,7 @@
     ssh -2NfCT -D 3128 tunnel@my_pi.me
 
 
-## Configurer firefox
+## Configurer Firefox
 
 ### Le proxy :
 
@@ -19,6 +19,11 @@
 
 Passer `network.proxy.socks_remote_dns` à `true`.
 
+## Configure Chromium
+
+Lancer la ligne de commande :
+
+  chromium-browser --proxy-server="socks5://localhost:3128" --host-resolver-rules="MAP * 0.0.0.0 , EXCLUDE localhost" &
 
 Voilà !
 
